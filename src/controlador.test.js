@@ -19,7 +19,7 @@ function obtener_Coordenadas(texto) {
   return { x, y, orientacion };
 }
 
-function controlar_auto(comandos){
+function get_coordenadas(comandos){
   const datos = separar_Datos(comandos) //["5,5", "1,2N", "IAIAIAIAA"]
   const coordenadas = datos[1];
   const valores = obtener_Coordenadas(coordenadas);
@@ -29,6 +29,13 @@ function controlar_auto(comandos){
 
   return x + "," + y+ orientacion;
 }
+function get_comandos(comandos){
+  const datos = separar_Datos(comandos) //["5,5", "1,2N", "IAIAIAIAA"]
+  const comandos_mov = datos[2];
+
+  return comandos_mov;
+}
+
 
 describe("Controlar", () => {
   it("se ingresan coordenas 0,0 y se muestra las coordenadas", () => {
@@ -41,7 +48,9 @@ describe("Controlar", () => {
     expect(mostrar_posicion_automovil(2, 2)).toEqual("2,2");
   });
   it("se ingresa el tamanio del mapa, punto de origen y comandos de movimiento, y muestra el punto de origen", () => {
-    expect(controlar_auto("5,5/1,2N/IAIAIAIAA")).toEqual("1,2N");
+    expect(get_coordenadas("5,5/1,2N/IAIAIAIAA")).toEqual("1,2N");
   });
-
+  it("se ingresa el tamanio del mapa, punto de origen y comandos de movimiento, y muestra los comandos de movimiento", () => {
+    expect(get_comandos("5,5/1,2N/IAIAIAIAA")).toEqual("IAIAIAIAA");
+  });
 });
