@@ -50,7 +50,7 @@ function get_coordenadas(comandos) {
   const y = valores.y;
   const orientacion = valores.orientacion;
 
-  return x + "," + y + orientacion;
+  return { x: x, y: y, orientacion: orientacion };
 }
 
 function get_comandos(comandos) {
@@ -67,7 +67,51 @@ function get_mapa(comandos) {
   return mapa;
 }
 
-// Función para ejecutar los comandos de un auto y actualizar su posición
+function ejecutarComandos(comandos){
+  let matrizDimension = get_mapa(comandos);
+  const posX = resultado.x;
+  const posY = resultado.y;
+  const direccion = resultado.orientacion;
+  //let posY = 2;
+  //let direccion = "N";
 
+  for (let i = 0; i < comandos.length; i++) {
+    let comando = comandos[i];
+    if (comando === "I") {
+      if (direccion === "N") {
+        direccion = "O";
+      } else if (direccion === "O") {
+        direccion = "S";
+      } else if (direccion === "S") {
+        direccion = "E";
+      } else if (direccion === "E") {
+        direccion = "N";
+      }
+    } else if (comando === "D") {
+      if (direccion === "N") {
+        direccion = "E";
+      } else if (direccion === "E") {
+        direccion = "S";
+      } else if (direccion === "S") {
+        direccion = "O";
+      } else if (direccion === "O") {
+        direccion = "N";
+      }
+    } else if (comando === "A") {
+      if (direccion === "N" && posY < matrizDimension) {
+        posY++;
+      } else if (direccion === "E" && posX < matrizDimension) {
+        posX++;
+      } else if (direccion === "S" && posY > 0) {
+        posY--;
+      } else if (direccion === "O" && posX > 0) {
+        posX--;
+      }
+    }
+}
 
-export {get_comandos, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil, Auto}
+console.log(posX + "," + posY + " " + direccion);
+
+}
+
+export {get_comandos, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil, Auto, ejecutarComandos}

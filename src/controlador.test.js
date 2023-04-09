@@ -13,7 +13,7 @@ describe("Controlar", () => {
     expect(auto.MostrarAuto(2, 2)).toEqual("2,2");
   });
   it("se ingresa el tamanio del mapa, punto de origen y comandos de movimiento, y muestra el punto de origen", () => {
-    expect(get_coordenadas("5,5/1,2N/IAIAIAIAA")).toEqual("1,2N");
+    expect(get_coordenadas("5,5/1,2N/IAIAIAIAA")).toEqual({"orientacion": "N", "x": 1, "y": 2});
   });
   it("se ingresa el tamanio del mapa, punto de origen y comandos de movimiento, y muestra los comandos de movimiento", () => {
     expect(get_comandos("5,5/1,2N/IAIAIAIAA")).toEqual("IAIAIAIAA");
