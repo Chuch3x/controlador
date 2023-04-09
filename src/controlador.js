@@ -2,6 +2,23 @@ var x = 0;
 var y = 0;
 var orientacion = "";
 
+class Auto {
+  constructor(posX, posY, orientacion) {
+    this.posX = posX;
+    this.posY = posY;
+    this.orientacion = orientacion;
+  }
+
+  CambiarOrientacion() {
+  }
+
+  CambiarPosicion() {
+  }
+
+  encender() {
+  }
+}
+
 function mostrar_posicion_automovil(x, y) {
   var inicio = x + "," + y;
   return inicio;
