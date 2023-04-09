@@ -70,4 +70,4 @@ function get_mapa(comandos) {
 // Función para ejecutar los comandos de un auto y actualizar su posición
 
 
-export {get_comandos, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil}
+export {get_comandos, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil, Auto}
