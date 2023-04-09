@@ -19,7 +19,7 @@ describe("Controlar", () => {
     expect(get_comandos("5,5/1,2N/IAIAIAIAA")).toEqual("IAIAIAIAA");
   });
   it("Se mueve el carro a la posicion esperada segun los movimientos", () => {
-   expect(ejecutarComandos("5,5/1,2N/IAIAIAIAA")).toEqual("1,3N");
+   expect(ejecutarComandos("5,5/3,3E/AADAADADDA")).toEqual("5,1E");
   });
 });
 
