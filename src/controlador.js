@@ -8,15 +8,18 @@ class Auto {
     this.posY = posY;
     this.orientacion = orientacion;
   }
+  
+  MostrarAuto(x, y) {
+    return x + "," + y;
+  }
 
   CambiarOrientacion() {
   }
 
-  CambiarPosicion() {
+  CambiarPosicion(NewX, NewY) {
+    return this.MostrarAuto(NewX, NewY);
   }
 
-  encender() {
-  }
 }
 
 function mostrar_posicion_automovil(x, y) {
