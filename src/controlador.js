@@ -23,8 +23,7 @@ class Auto {
 }
 
 function mostrar_posicion_automovil(x, y) {
-  var inicio = x + "," + y;
-  return inicio;
+  Auto.MostrarAuto(x, y);
 }
 function separar_Datos(texto) {
   return texto.split("/");
