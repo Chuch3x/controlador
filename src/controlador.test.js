@@ -1,4 +1,4 @@
-import {Auto, get_comandos, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil} from "./controlador.js";
+import {Auto, get_comandos, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil, ejecutarComandos} from "./controlador.js";
 
 let auto = new Auto(0,0,"N");
 
@@ -18,8 +18,8 @@ describe("Controlar", () => {
   it("se ingresa el tamanio del mapa, punto de origen y comandos de movimiento, y muestra los comandos de movimiento", () => {
     expect(get_comandos("5,5/1,2N/IAIAIAIAA")).toEqual("IAIAIAIAA");
   });
- // it("Se mueve el carro a la posicion esperada segun los movimientos", () => {
-   // expect(ejecutarComandos("5,5/1,2N/IAIAIAIAA")).toEqual("1,3N");
-  //});
+  it("Se mueve el carro a la posicion esperada segun los movimientos", () => {
+   expect(ejecutarComandos("5,5/1,2N/IAIAIAIAA")).toEqual("1,3N");
+  });
 });
 

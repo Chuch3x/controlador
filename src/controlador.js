@@ -69,11 +69,11 @@ function get_mapa(comandos) {
 
 function ejecutarComandos(comandos){
   let matrizDimension = get_mapa(comandos);
-  const posX = resultado.x;
-  const posY = resultado.y;
-  const direccion = resultado.orientacion;
-  //let posY = 2;
-  //let direccion = "N";
+  console.log(matrizDimension)
+  let resultado = get_coordenadas(comandos);
+  let posX = resultado.x;
+  let posY = resultado.y;
+  let direccion = resultado.orientacion;
 
   for (let i = 0; i < comandos.length; i++) {
     let comando = comandos[i];
@@ -98,9 +98,9 @@ function ejecutarComandos(comandos){
         direccion = "N";
       }
     } else if (comando === "A") {
-      if (direccion === "N" && posY < matrizDimension) {
+      if (direccion === "N" && posY < matrizDimension[0]) {
         posY++;
-      } else if (direccion === "E" && posX < matrizDimension) {
+      } else if (direccion === "E" && posX < matrizDimension[0]) {
         posX++;
       } else if (direccion === "S" && posY > 0) {
         posY--;
@@ -109,9 +109,7 @@ function ejecutarComandos(comandos){
       }
     }
 }
-
-console.log(posX + "," + posY + " " + direccion);
-
+  return posX + "," + posY + direccion;
 }
 
 export {get_comandos, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil, Auto, ejecutarComandos}
