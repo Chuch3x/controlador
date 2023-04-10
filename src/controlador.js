@@ -42,7 +42,12 @@ class Auto {
     const mapa = datos[0];
     return mapa;
   }
-
+  get_pos_inicial(comandos){
+    const datos = this.separar_Datos(comandos); //["5,5", "1,2N", "IAIAIAIAA"]
+    const pos_inicial = datos[1];
+  
+    return pos_inicial;
+  }
   get_comandos(comandos) {
     const datos = this.separar_Datos(comandos); //["5,5", "1,2N", "IAIAIAIAA"]
     const comandos_mov = datos[2];
