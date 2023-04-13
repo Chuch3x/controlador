@@ -24,5 +24,8 @@ describe("Controlar", () => {
   it("Si se ingresa J se avanza 2 posiciones", () => {
     expect(auto.avanzar_2_posiciones("5,5/3,3N/J")).toEqual("3,1N");
    });
+   it("Si se ingresa J en los comandos se avanza 2 posiciones", () => {
+    expect(auto.ejecutarComandos("5,5/3,3E/JDJDADDA")).toEqual("5,1E");
+   });
 });
 

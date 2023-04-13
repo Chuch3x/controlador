@@ -96,6 +96,17 @@ class Auto {
           posX--;
         }
       }
+      else if (comando === "J") {
+        if (direccion === "N" && posY < matrizDimension[0]) {
+          posY+=2;
+        } else if (direccion === "E" && posX < matrizDimension[0]) {
+          posX+=2;
+        } else if (direccion === "S" && posY > 0) {
+          posY-=2;
+        } else if (direccion === "O" && posX > 0) {
+          posX-=2;
+        }
+      }      
     }
     return posX + "," + posY + direccion;
   }
@@ -104,7 +115,6 @@ class Auto {
     let matrizDimension = this.get_mapa(comandos);
     let resultado = this.get_coordenadas(comandos);
     let posX = resultado.x;
-
     let posY = resultado.y;
   
     let direccion = resultado.orientacion;
