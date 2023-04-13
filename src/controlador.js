@@ -88,7 +88,11 @@ class Auto {
       } else if (comando === "A") {
         if (direccion === "N" && posY < matrizDimension[0]) {
           posY++;
-        } else if (direccion === "E" && posX < matrizDimension[0]) {
+        } else if (direccion === "E") {
+          if (posX >= matrizDimension[0])
+          {
+            posX = 0;
+          }
           posX++;
         } else if (direccion === "S" && posY > 0) {
           posY--;

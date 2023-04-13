@@ -36,5 +36,8 @@ describe("Controlar", () => {
    it("Se ingresan los datos y hacemos que el carro salte desde una posicion inicial, gire a la derecha y avance", () => {
     expect(auto.ejecutarComandos("5,5/3,3E/JDA")).toEqual("5,2S");
    });
+   it("Hacemos que el auto salga de los limites y hacemos que continue en el mapa", () => {
+    expect(auto.ejecutarComandos("5,5/5,3E/AA")).toEqual("2,3E");
+   });
 });
 
