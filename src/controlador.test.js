@@ -27,5 +27,8 @@ describe("Controlar", () => {
    it("Se ingresan los datos y hacemos que el carro salte desde una posicion inicial en el mismo sentido y luego gire una vez", () => {
     expect(auto.ejecutarComandos("5,5/3,3E/JI")).toEqual("5,3N");
    });
+   it("Se ingresan los datos y hacemos que el carro salte desde una posicion inicial en el mismo sentido y luego gire dos veces", () => {
+    expect(auto.ejecutarComandos("5,5/3,3E/JII")).toEqual("5,3O");
+   });
 });
 
