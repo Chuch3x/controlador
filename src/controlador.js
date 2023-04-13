@@ -113,12 +113,28 @@ class Auto {
         }
       }else if (comando === "J") {
         if (direccion === "N") {
+          if(posY >= matrizDimension[0])
+          {
+            posY = 0;
+          }
           posY = posY + 2;
         } else if (direccion === "E") {
+          if (posX >= matrizDimension[0])
+          {
+            posX = 0;
+          }
           posX = posX + 2;
         } else if (direccion === "S") {
+          if(posY <= 0)
+          {
+            posY = matrizDimension[0];
+          }
           posY = posY - 2;
         } else if (direccion === "O") {
+          if(posX <= 0)
+          {
+            posX = matrizDimension[0];
+          }
           posX = posY - 2;
         }
       }

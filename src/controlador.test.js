@@ -42,5 +42,8 @@ describe("Controlar", () => {
    it("Hacemos que el auto salga de los limites y hacemos que continue en el mapa en otras coordenadas", () => {
     expect(auto.ejecutarComandos("5,5/1,3O/AA")).toEqual("4,3O");
    });
+   it("Se mueve el carro a la posicion esperada segun los movimientos con la funcion Saltar incluida", () => {
+    expect(auto.ejecutarComandos("5,5/3,3E/AADAADADDAJ")).toEqual("2,1E");
+   });
 });
 
