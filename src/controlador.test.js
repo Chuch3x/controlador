@@ -21,5 +21,8 @@ describe("Controlar", () => {
   it("Se mueve el carro a la posicion esperada segun los movimientos", () => {
    expect(auto.ejecutarComandos("5,5/3,3E/AADAADADDA")).toEqual("5,1E");
   });
+  it("Se ingresan los datos y hacemos que el carro salte desde una posicion inicial en el mismo sentido", () => {
+    expect(auto.ejecutarComandos("5,5/3,3E/J")).toEqual("5,3E");
+   });
 });
 

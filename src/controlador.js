@@ -95,6 +95,16 @@ class Auto {
         } else if (direccion === "O" && posX > 0) {
           posX--;
         }
+      }else if (comando === "J") {
+        if (direccion === "N") {
+          posY = posY + 2;
+        } else if (direccion === "E") {
+          posX = posX + 2;
+        } else if (direccion === "S") {
+          posY = posY - 2;
+        } else if (direccion === "O") {
+          posX = posY - 2;
+        }
       }
     }
     return posX + "," + posY + direccion;
