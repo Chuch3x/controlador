@@ -104,21 +104,21 @@ class Auto {
     let matrizDimension = this.get_mapa(comandos);
     let resultado = this.get_coordenadas(comandos);
     let posX = resultado.x;
-    console.log(posX);
+
     let posY = resultado.y;
-    console.log(posY);
+  
     let direccion = resultado.orientacion;
     for (let i = 0; i < comandos.length; i++) {
       let comando = comandos[i];
       if (comando === "J") {
         if (direccion === "N" && posY < matrizDimension[0] - 1) {
-          posX -= 2;
-        } else if (direccion === "E" && posX < matrizDimension[1] - 1) {
-          posY += 2;
-        } else if (direccion === "S" && posY > 1) {
-          posX -= 2;
-        } else if (direccion === "O" && posX > 1) {
           posY -= 2;
+        } else if (direccion === "E" && posX < matrizDimension[1] - 1) {
+          posX += 2;
+        } else if (direccion === "S" && posY > 1) {
+          posY += 2;
+        } else if (direccion === "O" && posX > 1) {
+          posX -= 2;
         }
       }
     }
