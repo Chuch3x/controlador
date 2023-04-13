@@ -39,5 +39,8 @@ describe("Controlar", () => {
    it("Hacemos que el auto salga de los limites y hacemos que continue en el mapa", () => {
     expect(auto.ejecutarComandos("5,5/5,3E/AA")).toEqual("2,3E");
    });
+   it("Hacemos que el auto salga de los limites y hacemos que continue en el mapa en otras coordenadas", () => {
+    expect(auto.ejecutarComandos("5,5/1,3O/AA")).toEqual("4,3O");
+   });
 });
 

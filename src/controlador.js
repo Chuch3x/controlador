@@ -86,7 +86,11 @@ class Auto {
           direccion = "N";
         }
       } else if (comando === "A") {
-        if (direccion === "N" && posY < matrizDimension[0]) {
+        if (direccion === "N") {
+          if(posY >= matrizDimension[0])
+          {
+            posY = 0;
+          }
           posY++;
         } else if (direccion === "E") {
           if (posX >= matrizDimension[0])
@@ -94,9 +98,17 @@ class Auto {
             posX = 0;
           }
           posX++;
-        } else if (direccion === "S" && posY > 0) {
+        } else if (direccion === "S") {
+          if(posY <= 0)
+          {
+            posY = matrizDimension[0];
+          }
           posY--;
-        } else if (direccion === "O" && posX > 0) {
+        } else if (direccion === "O") {
+          if(posX <= 0)
+          {
+            posX = matrizDimension[0];
+          }
           posX--;
         }
       }else if (comando === "J") {
