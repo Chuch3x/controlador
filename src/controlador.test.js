@@ -1,4 +1,4 @@
-import {Auto} from "./controlador.js";
+import {Auto, avanzar_2_posiciones} from "./controlador.js";
 
 let auto = new Auto(0,0,"N");
 
@@ -21,5 +21,8 @@ describe("Controlar", () => {
   it("Se mueve el carro a la posicion esperada segun los movimientos", () => {
    expect(auto.ejecutarComandos("5,5/3,3E/AADAADADDA")).toEqual("5,1E");
   });
+  it("Si se ingresa J se avanza 2 posiciones", () => {
+    expect(auto.avanzar_2_posiciones("5,5/3,3N/J")).toEqual("1,3N");
+   });
 });
 

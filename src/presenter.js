@@ -1,4 +1,4 @@
-import {get_comandos, Auto, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil} from "./controlador"
+import {Auto, get_coordenadas, obtener_Coordenadas, separar_Datos, mostrar_posicion_automovil} from "./controlador"
 
 const comandos = document.querySelector("#comandos_input");
 const form = document.querySelector("#controlador_form");
