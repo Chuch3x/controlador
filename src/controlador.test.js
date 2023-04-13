@@ -27,5 +27,8 @@ describe("Controlar", () => {
    it("Si se ingresa J en los comandos se avanza 2 posiciones", () => {
     expect(auto.ejecutarComandos("5,5/3,3E/JDJDADDA")).toEqual("5,1E");
    });
+   it("Si se pasa del tamani del mapa, se toma en cuenta que este es circular", () => {
+    expect(auto.ejecutarComandos("5,5/3,3E/JJ")).toEqual("3,4E");
+   });
 });
 

@@ -55,14 +55,14 @@ class Auto {
     return comandos_mov;
   }
 
-  ejecutarComandos(comandos){
+  ejecutarComandos(comandos) {
     let matrizDimension = this.get_mapa(comandos);
     console.log(matrizDimension)
     let resultado = this.get_coordenadas(comandos);
     let posX = resultado.x;
     let posY = resultado.y;
     let direccion = resultado.orientacion;
-  
+    
     for (let i = 0; i < comandos.length; i++) {
       let comando = comandos[i];
       if (comando === "I") {
@@ -86,30 +86,56 @@ class Auto {
           direccion = "N";
         }
       } else if (comando === "A") {
-        if (direccion === "N" && posY < matrizDimension[0]) {
+        if (direccion === "N") {
           posY++;
-        } else if (direccion === "E" && posX < matrizDimension[0]) {
+          if (posY > matrizDimension[0]) {
+            posY = 0;
+          }
+        } else if (direccion === "E") {
           posX++;
-        } else if (direccion === "S" && posY > 0) {
+          if (posX > matrizDimension[1]) {
+            posX = 0;
+          }
+        } else if (direccion === "S") {
           posY--;
-        } else if (direccion === "O" && posX > 0) {
+          if (posY < 0) {
+            posY = matrizDimension[0];
+          }
+        } else if (direccion === "O") {
           posX--;
+          if (posX < 0) {
+            posX = matrizDimension[1];
+          }
         }
       }
       else if (comando === "J") {
-        if (direccion === "N" && posY < matrizDimension[0]) {
-          posY+=2;
-        } else if (direccion === "E" && posX < matrizDimension[0]) {
-          posX+=2;
-        } else if (direccion === "S" && posY > 0) {
-          posY-=2;
-        } else if (direccion === "O" && posX > 0) {
-          posX-=2;
+        if (direccion === "N") {
+          posY += 2;
+          if (posY > matrizDimension[0]) {
+            posY = 0;
+          }
+        } else if (direccion === "E") {
+          posX += 2;
+          if (posX > matrizDimension[0]) {
+            posX = posX - 5;
+            console.log(posX);
+          }
+        } else if (direccion === "S") {
+          posY -= 2;
+          if (posY < 0) {
+            posY = matrizDimension[0];
+          }
+        } else if (direccion === "O") {
+          posX -= 2;
+          if (posX < 0) {
+            posX = matrizDimension[1];
+          }
         }
       }      
     }
     return posX + "," + posY + direccion;
   }
+  
 
   avanzar_2_posiciones(comandos){
     let matrizDimension = this.get_mapa(comandos);
